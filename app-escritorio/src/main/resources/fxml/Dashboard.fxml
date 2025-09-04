@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:id="rootPane"
+            fx:controller="com.miapp.admin.controllers.DashboardController">
+
+    <!-- Menú lateral -->
+    <left>
+        <VBox spacing="15" styleClass="menu-lateral" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="SIS 312 G2" textFill="white" styleClass="titulo-dashboard"/>
+
+            <!-- NUEVOS / REORDENADOS -->
+            <Button text="Inicio" fx:id="btnInicio" styleClass="menu-button" onAction="#mostrarInicio"/>
+            <Button text="Estudiantes" fx:id="btnEstudiantes" styleClass="menu-button" onAction="#cargarEstudiantesEnCentro"/>
+            <Button text="Sesiones" fx:id="btnSesiones" styleClass="menu-button" onAction="#cargarSesionesEnCentro"/>
+            <Button text="Prácticas Auxiliar" fx:id="btnNotas" styleClass="menu-button"/>
+            <Button text="Prácticas Docente" fx:id="btnPracticas" styleClass="menu-button" onAction="#abrirPracticas"/>
+            <Button text="Participaciones" fx:id="btnParticipaciones" styleClass="menu-button"/>
+            <Button text="Reportes" fx:id="btnReportes" styleClass="menu-button"/>
+            <Button text="Salir" fx:id="btnSalir" styleClass="menu-button" onAction="#salir"/>
+        </VBox>
+    </left>
+
+    <!-- Área principal: contenedor donde inyectaremos vistas.
+         De inicio contiene las 'cards' (homePane). -->
+    <center>
+        <StackPane fx:id="contentArea">
+            <VBox fx:id="homePane" spacing="20" styleClass="area-principal">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+
+                <Label text="Bienvenido al Sistema de Gestión de Asistencia" styleClass="titulo-cards"/>
+
+                <HBox spacing="20">
+                    <!-- Card 1: Total Estudiantes -->
+                    <VBox spacing="10" styleClass="card">
+                        <Label text="Estudiantes" styleClass="card-title"/>
+                        <Label text="0" fx:id="lblTotalEstudiantes" styleClass="card-value"/>
+                    </VBox>
+
+                    <!-- Card 2: Sesiones -->
+                    <VBox spacing="10" styleClass="card">
+                        <Label text="Sesiones" styleClass="card-title"/>
+                        <Label text="0" fx:id="lblTotalSesiones" styleClass="card-value"/>
+                    </VBox>
+                    
+                    <VBox spacing="10" styleClass="card">
+                        <Label text="Prácticas Auxiliar" styleClass="card-title"/>
+                        <Label text="0" fx:id="lblTotalPracticaA" styleClass="card-value"/>
+                    </VBox>
+                </HBox>
+
+                <HBox spacing="20">
+                    <VBox spacing="10" styleClass="card">
+                        <Label text="Prácticas Docente" styleClass="card-title"/>
+                        <Label text="0" fx:id="lblTotalPracticaP" styleClass="card-value"/>
+                    </VBox>
+                    <VBox spacing="10" styleClass="card">
+                        <Label text="Puntos Extra" styleClass="card-title"/>
+                        <Label text="0" fx:id="lblTotalParticipaciones" styleClass="card-value"/>
+                    </VBox>
+                </HBox>
+
+            </VBox>
+        </StackPane>
+    </center>
+
+</BorderPane>

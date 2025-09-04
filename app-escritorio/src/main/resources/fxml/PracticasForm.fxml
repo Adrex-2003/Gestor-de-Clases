@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.miapp.admin.controllers.PracticaFormController"
+      spacing="12" padding="20">
+
+    <!-- Título -->
+    <Label text="Registro de Práctica" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <!-- Nombre de práctica -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Práctica:" prefWidth="100"/>
+        <TextField fx:id="txtPractica" promptText="Nombre de la práctica" prefWidth="250"/>
+    </HBox>
+
+    <!-- Fecha inicio -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Fecha inicio:" prefWidth="100"/>
+        <DatePicker fx:id="dpInicio" prefWidth="250"/>
+    </HBox>
+
+    <!-- Fecha fin -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Fecha fin:" prefWidth="100"/>
+        <DatePicker fx:id="dpFin" prefWidth="250"/>
+    </HBox>
+
+    <!-- Descripción -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Descripción:" prefWidth="100"/>
+        <TextArea fx:id="txtDescripcion" prefWidth="250" prefHeight="80" wrapText="true"/>
+    </HBox>
+
+    <!-- Botones -->
+    <HBox spacing="15" alignment="CENTER_RIGHT">
+        <Button text="Guardar" fx:id="btnGuardar" style="-fx-background-color: #27ae60; -fx-text-fill: white;"/>
+        <Button text="Cancelar" fx:id="btnCancelar" style="-fx-background-color: #c0392b; -fx-text-fill: white;"/>
+    </HBox>
+
+</VBox>

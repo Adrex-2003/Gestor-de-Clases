@@ -1,0 +1,483 @@
+
+/* =========================
+   CSS para dashboard.fxml
+   ========================= */
+
+/* Menú lateral */
+.menu-lateral {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 20;
+    -fx-alignment: top-center;
+}
+
+/* Botones del menú */
+.menu-button {
+    -fx-background-color: #34495e;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-pref-width: 160px;
+    -fx-pref-height: 40px;
+    -fx-cursor: hand;
+    -fx-background-radius: 5px;
+}
+
+.menu-button:hover {
+    -fx-background-color: #1abc9c;
+}
+
+/* Área principal */
+.area-principal {
+    -fx-background-color: #ecf0f1;
+    -fx-padding: 20;
+}
+
+/* Títulos Dashboard */
+.titulo-cards {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+.titulo-dashboard {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+/* Cards */
+.card {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+    -fx-alignment: center;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 100px;
+}
+
+/* Card títulos */
+.card-title {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7f8c8d;
+    -fx-font-weight: bold;
+}
+
+/* Card valores */
+.card-value {
+    -fx-font-size: 24px;
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+}
+
+
+/* =========================
+   Fin CSS dashboard.fxml
+   ========================= */
+
+
+/* =========================
+   CSS para estudiantes.fxml
+   ========================= */
+
+/* Área principal */
+.area-principal {
+    -fx-background-color: #f5f5f5; 
+    -fx-padding: 15;
+    -fx-spacing: 15;
+}
+
+/* Título de estudiantes */
+.titulo-estudiantes {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Botones de estudiante */
+.btn-estudiante {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 8 16;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+.btn-estudiante:hover {
+    -fx-background-color: #2ecc71;
+}
+
+/* Tabla de estudiantes */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #dcdcdc; /* Líneas suaves */
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+/* Encabezados de tabla */
+.table-view .column-header-background {
+    -fx-background-color: #34495e;
+}
+
+.table-view .column-header, 
+.table-view .table-column {
+    -fx-text-fill: #a6a8a9; /* Gris claro en encabezados */
+    -fx-font-weight: bold;
+    -fx-font-size: 13px; /* Tamaño de letra encabezados */
+}
+
+/* Filas de la tabla */
+.table-view .table-row-cell {
+    -fx-background-color: white;
+    -fx-text-fill: #2c3e50; /* Gris oscuro para las celdas */
+    -fx-font-weight: normal; /* Quitamos negrita */
+    -fx-font-size: 11px; /* Tamaño de letra celdas */
+    -fx-border-color: #e0e0e0; /* Líneas separadoras entre filas */
+    -fx-border-width: 0 0 1 0; /* Línea inferior de cada fila */
+}
+
+/* Hover sobre filas */
+.table-view .table-row-cell:hover {
+    -fx-background-color: #ecf0f1;
+}
+
+/* Selección de fila */
+.table-view .table-row-cell:filled:selected, 
+.table-view .table-row-cell:focused:selected {
+    -fx-background-color: #d1e7dd;
+    -fx-text-fill: #2c3e50;
+}
+
+/* =========================
+   Fin CSS estudiantes.fxml
+   ========================= */
+
+
+/* =========================
+   CSS para estudiantesform.fxml
+   ========================= */
+
+/* Área principal */
+.area-principal {
+    -fx-background-color: #ecf0f1; /* Gris claro */
+    -fx-padding: 25;
+    -fx-spacing: 20;
+    -fx-alignment: TOP_CENTER;
+}
+
+/* Título del formulario */
+.titulo-estudiantes {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50; /* Azul oscuro */
+}
+
+/* GridPane del formulario */
+.grid-pane {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-hgap: 15;
+    -fx-vgap: 15;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+/* Labels dentro del GridPane */
+.grid-pane .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+    -fx-font-size: 14px;
+}
+
+/* Campos de texto */
+.grid-pane .text-field {
+    -fx-padding: 5 10;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-border-color: #bdc3c7;
+    -fx-font-size: 14px;
+}
+
+/* Botones de acción */
+.hbox-botones {
+    -fx-alignment: CENTER;
+}
+
+.btn-estudiante {
+    -fx-background-color: #2c3e50; /* Azul oscuro */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 8 20;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+.btn-estudiante:hover {
+    -fx-background-color: #34495e; /* Más claro al hover */
+}
+
+/* =========================
+   Fin CSS estudiantesform.fxml
+   ========================= */
+
+/* =========================
+   sesiones.fxml
+   ========================= */
+
+/* Área principal */
+.area-principal, .center > VBox {
+    -fx-background-color: #f5f5f5; 
+    -fx-padding: 15;
+    -fx-spacing: 15;
+}
+
+/* Título de sesiones */
+.titulo-sesiones {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50; 
+}
+
+/* Botón de nueva sesión */
+.btn-nueva-sesion {
+    -fx-background-color: #27ae60; 
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 8 18;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+.btn-nueva-sesion:hover {
+    -fx-background-color: #2ecc71;
+}
+
+/* Tabla de sesiones */
+.table-sesiones {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-size: 13px;
+    -fx-text-fill: #2c3e50; /* Color del texto de las celdas */
+}
+
+/* Encabezados de tabla */
+.table-sesiones .column-header-background {
+    -fx-background-color: #34495e; 
+}
+
+.table-sesiones .column-header, 
+.table-sesiones .table-column {
+    -fx-text-fill: #a6a8a9;
+    -fx-font-weight: bold;
+}
+
+/* Filas de la tabla */
+.table-sesiones .table-row-cell {
+    -fx-background-color: white;
+    -fx-text-fill: #2c3e50; /* Texto de las filas visible */
+}
+
+.table-sesiones .table-row-cell:filled:selected, 
+.table-sesiones .table-row-cell:focused:selected {
+    -fx-background-color: #d1e7dd; 
+    -fx-text-fill: #2c3e50; /* Texto sigue visible al seleccionar fila */
+}
+
+/* Botones dentro de la tabla (acciones) */
+.table-sesiones .button {
+    -fx-background-color: #2980b9; 
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4;
+    -fx-padding: 5 10;
+    -fx-cursor: hand;
+}
+
+.table-sesiones .button:hover {
+    -fx-background-color: #3498db;
+}
+
+/* =========================
+   Fin CSS sesiones.fxml
+   ========================= */
+
+/* =========================
+   CSS para SesionesForm.fxml
+   ========================= */
+
+/* Contenedor principal */
+.VBox {
+    -fx-background-color: #f5f5f5;
+    -fx-padding: 20;
+    -fx-spacing: 15;
+}
+
+/* Título del formulario */
+.titulo-sesiones {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Labels del formulario */
+.GridPane .label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #34495e;
+    -fx-font-weight: normal;
+}
+
+/* Campos de texto y DatePicker */
+.TextField, .DatePicker {
+    -fx-background-color: white;
+    -fx-border-color: #dcdcdc;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 6 10;
+    -fx-font-size: 13px;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Botón Guardar (verde moderno) */
+.btn-nueva-sesion {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 8 16;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+.btn-nueva-sesion:hover {
+    -fx-background-color: #2ecc71;
+}
+
+/* Botón Cancelar (gris) */
+.btn-estudiante {
+    -fx-background-color: #7f8c8d;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 8 16;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.btn-estudiante:hover {
+    -fx-background-color: #95a5a6;
+}
+
+/* Botones dentro de la tabla (acciones) */
+.table-sesiones .button {
+    -fx-background-color: #2980b9; 
+    -fx-text-fill: white;
+    -fx-font-size: 14px;      /* Más grande */
+    -fx-font-weight: bold;
+    -fx-background-radius: 6; /* Botones más redondeados */
+    -fx-padding: 4 6;        /* Más espacio interno */
+    -fx-cursor: hand;
+}
+
+/* Hover de botones dentro de la tabla */
+.table-sesiones .button:hover {
+    -fx-background-color: #3498db;
+}
+
+/* Para asegurar que los iconos se vean centrados */
+.table-sesiones .button .font-icon {
+    -fx-font-size: 11px;      /* Tamaño del icono dentro del botón */
+}
+
+
+/* =========================
+   Fin CSS SesionesForm.fxml
+   ========================= */
+
+
+   /* CSS para ListaAsistencias.fxml */
+
+/* Raíz */
+#listaAsistenciasRoot {
+    -fx-background-color: #f9f9f9;
+    -fx-font-family: "Segoe UI", "Roboto", sans-serif;
+}
+
+/* Título superior */
+.titulo-lista-asistencias {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Tabla de estudiantes */
+.table-lista-asistencias {
+    -fx-background-color: white;
+    -fx-border-color: #dcdcdc;
+    -fx-border-width: 1;
+    -fx-table-cell-border-color: #e0e0e0;
+    -fx-table-header-border-color: #c0c0c0;
+    -fx-font-size: 11px;
+    -fx-text-fill: #34495e;
+}
+
+/* Encabezados de columna */
+.table-lista-asistencias .column-header {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-color: #ecf0f1;
+    -fx-border-color: #bdc3c7;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* Filas de la tabla */
+.table-lista-asistencias .table-row-cell {
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* Hover en filas */
+.table-lista-asistencias .table-row-cell:hover {
+    -fx-background-color: #f0f8ff;
+}
+
+/* Botones */
+.btn-lista-asistencias {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 6 15 6 15;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+}
+
+/* Hover en botones */
+.btn-lista-asistencias:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Footer */
+#footerListaAsistencias {
+    -fx-background-color: #f1f1f1;
+}
+
+/* Header HBox */
+#headerListaAsistencias {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dcdcdc;
+    -fx-border-width: 0 0 1 0;
+}

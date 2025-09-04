@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/21.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.miapp.admin.controllers.EstudianteFormController"
+      spacing="20"
+      styleClass="area-principal"
+      alignment="TOP_CENTER">
+
+    <!-- Título del formulario -->
+    <Label text="Agregar/Editar Estudiante" styleClass="titulo-estudiantes"/>
+
+    <!-- Formulario -->
+    <GridPane styleClass="grid-pane">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+
+        <!-- Labels y campos de texto -->
+        <Label text="RU:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtRU" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="CI:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtCI" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Apellido Paterno:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtAPaterno" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Apellido Materno:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtAMaterno" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Nombre:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtNombre" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <!-- Botones de acción -->
+    <HBox spacing="10" styleClass="hbox-botones">
+        <Button text="Guardar" fx:id="btnGuardar" styleClass="btn-estudiante" onAction="#guardar"/>
+        <Button text="Cancelar" fx:id="btnCancelar" styleClass="btn-estudiante" onAction="#cerrar"/>
+    </HBox>
+
+</VBox>

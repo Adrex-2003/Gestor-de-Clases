@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Priority?>
+
+<VBox xmlns="http://javafx.com/javafx/21.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.miapp.admin.controllers.EstudiantesController"
+      spacing="10" styleClass="area-principal"
+      VBox.vgrow="ALWAYS">
+
+    <!-- Título -->
+    <Label text="Gestión de Estudiantes" styleClass="titulo-estudiantes"/>
+
+    <!-- Tabla de estudiantes -->
+    <TableView fx:id="tableEstudiantes" styleClass="table-view" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colRU" text="RU" />
+            <TableColumn fx:id="colCI" text="CI" />
+            <TableColumn fx:id="colAPaterno" text="Apellido Paterno" />
+            <TableColumn fx:id="colAMaterno" text="Apellido Materno" />
+            <TableColumn fx:id="colNombre" text="Nombre Completo" />
+        </columns>
+    </TableView>
+
+    <!-- Botones -->
+    <HBox spacing="10" style="-fx-padding: 10 0 0 0;">
+        <Button text="Agregar" fx:id="btnAgregar" styleClass="btn-nueva-sesion"/>
+        <Button text="Editar" fx:id="btnEditar" styleClass="btn-estudiante"/>
+        <Button text="Eliminar" fx:id="btnEliminar" styleClass="btn-estudiante"/>
+    </HBox>
+
+</VBox>

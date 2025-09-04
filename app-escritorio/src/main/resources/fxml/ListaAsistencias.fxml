@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" 
+            fx:controller="com.miapp.admin.controllers.ListaAsistenciaController"
+            id="listaAsistenciasRoot">
+
+    <top>
+        <HBox spacing="10" id="headerListaAsistencias">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+            <Label text="Estudiantes de la Sesión" styleClass="titulo-lista-asistencias"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+        </HBox>
+    </top>
+
+    <center>
+        <AnchorPane id="centerListaAsistencias">
+            <TableView fx:id="tablaEstudiantes" 
+                       AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                       AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
+                       styleClass="table-lista-asistencias">
+                <columns>
+                    <TableColumn text="Apellido Paterno" fx:id="colAPaterno" prefWidth="150"/>
+                    <TableColumn text="Apellido Materno" fx:id="colAMaterno" prefWidth="150"/>
+                    <TableColumn text="Nombres" fx:id="colNombres" prefWidth="200"/>
+                    <TableColumn text="Asistencia" fx:id="colAsistencia" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </AnchorPane>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT" id="footerListaAsistencias">
+            <padding>
+                <Insets top="10" right="15" bottom="15" left="15"/>
+            </padding>
+            <Button text="Guardar cambios" fx:id="btnGuardar" styleClass="btn-lista-asistencias"/>
+            <Button text="Cerrar" fx:id="btnCerrar" styleClass="btn-lista-asistencias"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
