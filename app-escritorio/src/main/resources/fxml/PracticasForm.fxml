@@ -4,8 +4,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.geometry.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.miapp.admin.controllers.PracticaFormController"
-      spacing="12" padding="20">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.miapp.admin.controllers.PracticasFormController"
+      spacing="12">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
 
     <!-- Título -->
     <Label text="Registro de Práctica" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
@@ -36,8 +39,8 @@
 
     <!-- Botones -->
     <HBox spacing="15" alignment="CENTER_RIGHT">
-        <Button text="Guardar" fx:id="btnGuardar" style="-fx-background-color: #27ae60; -fx-text-fill: white;"/>
-        <Button text="Cancelar" fx:id="btnCancelar" style="-fx-background-color: #c0392b; -fx-text-fill: white;"/>
+        <Button text="Guardar" fx:id="btnGuardar" style="-fx-background-color: #27ae60; -fx-text-fill: white;" onAction="#guardarPractica"/>
+        <Button text="Cancelar" fx:id="btnCancelar" style="-fx-background-color: #c0392b; -fx-text-fill: white;" onAction="#cancelar"/>
     </HBox>
 
 </VBox>

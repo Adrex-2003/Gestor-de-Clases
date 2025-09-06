@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Estudiante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        input,
+        button {
+            margin: 5px 0;
+            padding: 8px;
+            width: 300px;
+        }
+
+        button {
+            width: 150px;
+        }
+
+        .mensaje {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Registrar Estudiante</h1>
+    <form id="formEstudiante">
+        <input type="text" id="ru" placeholder="RU" required><br>
+        <input type="text" id="ci" placeholder="CI" required><br>
+        <input type="text" id="aPaterno" placeholder="Apellido Paterno" required><br>
+        <input type="text" id="aMaterno" placeholder="Apellido Materno" required><br>
+        <input type="text" id="nombre" placeholder="Nombre" required><br>
+        <button type="submit">Registrar</button>
+    </form>
+    <div class="mensaje" id="mensaje"></div>
+
+    <script>
+        const form = document.getElementById('formEstudiante');
+        const mensaje = document.getElementById('mensaje');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const estudiante = {
+                ru: document.getElementById('ru').value,
+                ci: document.getElementById('ci').value,
+                aPaterno: document.getElementById('aPaterno').value,
+                aMaterno: document.getElementById('aMaterno').value,
+                nombre: document.getElementById('nombre').value
+            };
+            console.log(estudiante);
+
+            fetch('/api/estudiantes', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(estudiante)
+            })
+                .then(response => response.text())
+                .then(data => {
+                    mensaje.textContent = data;
+                    form.reset();
+                })
+                .catch(error => {
+                    mensaje.textContent = 'Error al registrar: ' + error;
+                });
+        });
+    </script>
+</body>
+
+</html>

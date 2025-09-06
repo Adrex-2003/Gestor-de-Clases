@@ -60,7 +60,7 @@ public class SesionesFormController {
         String fecha = dpFecha.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         String descripcion = txtDescripcion.getText();
         String tokenQR = UUID.randomUUID().toString();
-        String fechaExpiracionQR = LocalDateTime.now().plusDays(1)
+        String fechaExpiracionQR = LocalDateTime.now().plusMinutes(3)
                 .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 
         try (Connection conn = Database.getConnection()) {

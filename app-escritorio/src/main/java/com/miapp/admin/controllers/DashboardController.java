@@ -10,6 +10,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.Parent;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,16 +21,26 @@ public class DashboardController {
     // -------------------------------
     // CARDS
     // -------------------------------
-    @FXML private Label lblTotalEstudiantes;
-    @FXML private Label lblTotalSesiones;
-    @FXML private Label lblTotalPracticaA;
-    @FXML private Label lblTotalParticipaciones;
+    @FXML
+    private Label lblTotalEstudiantes;
+    @FXML
+    private Label lblTotalSesiones;
+    @FXML
+    private Label lblTotalPracticaA;
+
+    @FXML
+    private Label lblTotalPracticaP;
+
+    @FXML
+    private Label lblTotalParticipaciones;
 
     // -------------------------------
     // CONTENEDOR CENTRAL
     // -------------------------------
-    @FXML private StackPane contentArea;
-    @FXML private VBox homePane; // panel de inicio con los cards
+    @FXML
+    private StackPane contentArea;
+    @FXML
+    private VBox homePane; // panel de inicio con los cards
 
     @FXML
     public void initialize() {
@@ -45,6 +56,7 @@ public class DashboardController {
     private void mostrarInicio() {
         contentArea.getChildren().clear();
         contentArea.getChildren().add(homePane);
+        actualizarCards();
     }
 
     @FXML
@@ -75,25 +87,39 @@ public class DashboardController {
         }
     }
 
+    
+    // Método público para cargar las prácticas del auxiliar
     @FXML
-private void abrirPracticas() {
-    try {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/PracticasAuxiliar.fxml"));
-        Parent practicasPane = loader.load();
-
-        contentArea.getChildren().clear();
-        contentArea.getChildren().add(practicasPane);
-
-    } catch (Exception e) {
-        e.printStackTrace();
+    private void abrirPracticasAuxiliar() {
+        cargarPracticas("AUXILIAR");
     }
-}
+
+    // Método público para cargar las prácticas del docente
+    @FXML
+    private void abrirPracticasDocente() {
+        cargarPracticas("DOCENTE");
+    }
+
+    // Método privado y reutilizable para cargar la ventana de prácticas
+    private void cargarPracticas(String tipoPractica) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Practicas.fxml"));
+            Parent practicasPane = loader.load();
+            PracticasController controller = loader.getController();
+            controller.setTipoPractica(tipoPractica);
+
+            contentArea.getChildren().clear();
+            contentArea.getChildren().add(practicasPane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     @FXML
     private void salir() {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, 
-            "¿Desea salir de la aplicación?", ButtonType.YES, ButtonType.NO);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
+                "¿Desea salir de la aplicación?", ButtonType.YES, ButtonType.NO);
         alert.showAndWait().ifPresent(response -> {
             if (response == ButtonType.YES) {
                 System.exit(0);
@@ -101,21 +127,20 @@ private void abrirPracticas() {
         });
     }
 
-    // -------------------------------
-    // MÉTODOS PARA OBTENER DATOS DE LA BD
-    // -------------------------------
     private void actualizarCards() {
         lblTotalEstudiantes.setText(String.valueOf(obtenerTotal("Estudiantes")));
         lblTotalSesiones.setText(String.valueOf(obtenerTotal("Sesiones")));
-        lblTotalPracticaA.setText(String.valueOf(obtenerTotal("NotasPracticas")));
+        lblTotalPracticaA.setText(String.valueOf(obtenerTotal("Practicas")));
+        lblTotalPracticaP.setText(String.valueOf(obtenerTotal("Practicas")));
         lblTotalParticipaciones.setText(String.valueOf(obtenerTotal("Participaciones")));
+        
     }
 
     private int obtenerTotal(String tabla) {
         String sql = "SELECT COUNT(*) AS total FROM " + tabla;
         try (Connection conn = Database.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql);
-             ResultSet rs = ps.executeQuery()) {
+                PreparedStatement ps = conn.prepareStatement(sql);
+                ResultSet rs = ps.executeQuery()) {
 
             if (rs.next()) {
                 return rs.getInt("total");
