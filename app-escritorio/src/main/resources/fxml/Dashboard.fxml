@@ -25,8 +25,8 @@
             <Button text="Inicio" fx:id="btnInicio" styleClass="menu-button" onAction="#mostrarInicio"/>
             <Button text="Estudiantes" fx:id="btnEstudiantes" styleClass="menu-button" onAction="#cargarEstudiantesEnCentro"/>
             <Button text="Sesiones" fx:id="btnSesiones" styleClass="menu-button" onAction="#cargarSesionesEnCentro"/>
-            <Button text="Prácticas Auxiliar" fx:id="btnNotas" styleClass="menu-button"/>
-            <Button text="Prácticas Docente" fx:id="btnPracticas" styleClass="menu-button" onAction="#abrirPracticas"/>
+            <Button text="Prácticas Auxiliar" fx:id="btnPracticasAuxiliar" styleClass="menu-button" onAction="#abrirPracticasAuxiliar"/>
+            <Button text="Prácticas Docente" fx:id="btnPracticasDocente" styleClass="menu-button" onAction="#abrirPracticasDocente"/>
             <Button text="Participaciones" fx:id="btnParticipaciones" styleClass="menu-button"/>
             <Button text="Reportes" fx:id="btnReportes" styleClass="menu-button"/>
             <Button text="Salir" fx:id="btnSalir" styleClass="menu-button" onAction="#salir"/>

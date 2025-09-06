@@ -160,9 +160,11 @@ public class SesionesController {
 
             String rutaQR = carpetaQR + "qr_" + sesion.getId() + ".png";
             File archivoQR = new File(rutaQR);
+            String urlBase = "http://192.168.0.25:8080/registro.html/";
+            String urlCompleta = urlBase + sesion.getTokenQr();
 
             if (!archivoQR.exists()) {
-                QRGenerator.generarQR(sesion.getTokenQr(), rutaQR);
+                QRGenerator.generarQR(urlCompleta, rutaQR);
             }
 
             Image qrImage = new Image(archivoQR.toURI().toString());
